@@ -40,24 +40,25 @@ body > * {
   overflow: hidden;
 }
 
-page-2, page-1 {
+page-1 {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   height: 100vh;
   box-sizing: border-box;
-}
-
-page-1 {
   background-color: rgb(37, 43, 52);
-  align-items: center;
   padding-top: 200px;
 }
 
 page-2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
   background-color: rgb(136, 150, 172);
-  align-items: flex-end;
   padding-top: 100px;
 }
 

@@ -2,6 +2,20 @@ $text-color: aliceblue;
 $primary: rgba(37, 43, 52, 1);
 $secondary: rgb(136, 150, 172);
 
+@mixin flex($display, $direction, $wrap, $align) {
+    display: $display;
+    flex-wrap: $wrap;
+    flex-direction: $direction;
+    align-items: $align;
+}
+
+@mixin page ($pageColor) {
+    @include flex(flex, row, wrap, center);
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: $pageColor;
+}
+
 body {
     > * {
         font-family: "Poppins";
@@ -47,26 +61,22 @@ body {
     }
 }
 
-%page {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    height: 100vh;
-    box-sizing: border-box;
-}
+// %page {
+//     display: flex;
+//     flex-wrap: wrap;
+//     flex-direction: row;
+//     align-items: center;
+//     height: 100vh;
+//     box-sizing: border-box;
+// }
 
 page-1 {
-    @extend %page;
-    background-color: $primary;
-    align-items: center;
+    @include page($primary);
     padding-top: 200px;
 }
 
 page-2 {
-    @extend %page;
-    background-color: $secondary;
-    align-items: flex-end;
+    @include page($secondary);
     padding-top: 100px;
 }
 
@@ -74,6 +84,10 @@ header-selector {
     min-height: 100%;
     width: 100px;
     background-color: $secondary;
+}
+
+skills-row {
+
 }
 
 // #page1 {
