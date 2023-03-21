@@ -80,6 +80,16 @@ page-2 {
     padding-top: 100px;
 }
 
+page-3 {
+    @include page($primary);
+    padding-top: 100px;
+}
+
+page-4 {
+    @include page($secondary);
+    padding-top: 100px;
+}
+
 header-selector {
     min-height: 100%;
     width: 100px;
