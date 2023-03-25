@@ -88,6 +88,7 @@ header-selector {
   min-height: 100%;
   width: 100px;
   background-color: rgb(136, 150, 172);
+  border-radius: 100px;
 }
 
 .info {
