@@ -1,6 +1,7 @@
 
 //document.addEventListener("resize", (height) => height = innerHeight)
 
+/*
 let height = innerHeight;
 console.log(`Initial height: ${height}`)
 
@@ -35,3 +36,28 @@ function checkPage(position) {
 const area = document.querySelector("body");
 
 document.addEventListener("scroll", () => checkPosition(height));
+*/
+
+windowResize();
+
+function windowResize() {
+    height = innerHeight;
+    //console.log(height)
+}
+
+function isInViewport(element, height) {
+    let bounding = element.getBoundingClientRect();
+    console.log(`Percentage: ${bounding.top/height}`)
+    let location = bounding.top/height;
+    if (location < 0.4 && location > -0.6) {
+        console.log("Page 2");
+    } else {
+        page = document.querySelector("#page2");
+    }
+}
+
+let page = document.querySelector("#page2");
+
+window.addEventListener("resize", windowResize);
+
+document.addEventListener("scroll", () => isInViewport(page, height));

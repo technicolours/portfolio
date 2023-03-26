@@ -40,7 +40,7 @@ body > * {
   overflow: hidden;
 }
 
-page-1 {
+#page1 {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -51,7 +51,7 @@ page-1 {
   padding-top: 200px;
 }
 
-page-2 {
+#page2, #page4 {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -62,7 +62,7 @@ page-2 {
   padding-top: 100px;
 }
 
-page-3 {
+#page3 {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -70,17 +70,6 @@ page-3 {
   height: 100vh;
   box-sizing: border-box;
   background-color: rgb(37, 43, 52);
-  padding-top: 100px;
-}
-
-page-4 {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  height: 100vh;
-  box-sizing: border-box;
-  background-color: rgb(136, 150, 172);
   padding-top: 100px;
 }
 

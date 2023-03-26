@@ -70,23 +70,18 @@ body {
 //     box-sizing: border-box;
 // }
 
-page-1 {
+#page1 {
     @include page($primary);
     padding-top: 200px;
 }
 
-page-2 {
+#page2, #page4 {
     @include page($secondary);
     padding-top: 100px;
 }
 
-page-3 {
+#page3 {
     @include page($primary);
-    padding-top: 100px;
-}
-
-page-4 {
-    @include page($secondary);
     padding-top: 100px;
 }
 
@@ -98,21 +93,8 @@ header-selector {
     
 }
 
-skills-row {
+// skills-row {
 
-}
-
-// #page1 {
-// background-color: $primary;
-// align-items: center;
-// padding-top: 200px;
-
-// }
-
-// #page2 {
-//     background-color: rgb(136, 150, 172);
-//     align-items: flex-end;
-//     padding-top: 100px;
 // }
 
 .info {
