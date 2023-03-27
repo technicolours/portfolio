@@ -20,10 +20,8 @@ body > * {
 
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: rgb(66, 73, 82);
-  padding: 3px 50px;
   border-radius: 100px;
   max-height: 70px;
   margin-top: 20px;
@@ -39,57 +37,14 @@ body > * {
   white-space: nowrap;
   overflow: hidden;
 }
-
-#page1 {
+.header #content {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  height: 100vh;
-  box-sizing: border-box;
-  background-color: rgb(37, 43, 52);
-  padding-top: 200px;
+  padding: 3px 50px;
 }
-
-#page2, #page4 {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  height: 100vh;
-  box-sizing: border-box;
-  background-color: rgb(136, 150, 172);
-  padding-top: 100px;
-}
-
-#page3 {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  height: 100vh;
-  box-sizing: border-box;
-  background-color: rgb(37, 43, 52);
-  padding-top: 100px;
-}
-
-header-selector {
-  min-height: 100%;
-  width: 100px;
-  background-color: rgb(136, 150, 172);
-  border-radius: 100px;
-}
-
-.info {
-  max-width: 400px;
-}
-
-a {
-  color: aliceblue;
-  text-decoration: none;
-}
-
-.links {
+.header ul {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -98,14 +53,108 @@ a {
   white-space: nowrap;
   font-size: 18px;
 }
+.header a {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+#header-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 150px;
+  background-color: rgb(136, 150, 172);
+  border-radius: 100px;
+  position: fixed;
+  right: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(37, 43, 52);
+  box-shadow: 0 0 5px rgb(26, 31, 38);
+}
+
+#page1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: rgb(37, 43, 52);
+  padding-top: 200px;
+}
+
+#page2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: rgb(136, 150, 172);
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 100px;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#page2 h2 {
+  color: rgb(37, 43, 52);
+}
+#page2 div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#page2 div div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 40px;
+  margin-top: 20px;
+}
+#page2 div img {
+  max-width: 10%;
+  height: auto;
+}
+
+#page3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: rgb(37, 43, 52);
+  padding-top: 100px;
+}
+
+#page4 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: rgb(136, 150, 172);
+  padding-top: 100px;
+}
+
+.info {
+  max-width: 400px;
+}
 
 h2 {
-  font-size: 26px;
+  font-size: 1.6em;
   color: aliceblue;
 }
 
 p {
-  font-size: 16px;
+  font-size: 1em;
   color: aliceblue;
 }
 
@@ -122,4 +171,6 @@ button {
 
 .button1 {
   margin-top: 20px;
-}/*# sourceMappingURL=portfolio.css.map */
+}
+
+/*# sourceMappingURL=portfolio.css.map */

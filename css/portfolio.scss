@@ -2,15 +2,15 @@ $text-color: aliceblue;
 $primary: rgba(37, 43, 52, 1);
 $secondary: rgb(136, 150, 172);
 
-@mixin flex($display, $direction, $wrap, $align) {
-    display: $display;
-    flex-wrap: $wrap;
+@mixin flex($direction, $justify, $align) {
+    display: flex;
     flex-direction: $direction;
     align-items: $align;
+    justify-content: $justify;
 }
 
 @mixin page ($pageColor) {
-    @include flex(flex, row, wrap, center);
+    @include flex(row, flex-start,  center);
     height: 100vh;
     box-sizing: border-box;
     background-color: $pageColor;
@@ -40,10 +40,8 @@ body {
 
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: rgba(66, 73, 82, 1);
-    padding: 3px 50px;
     border-radius: 100px;
     max-height: 70px;
     margin-top: 20px;
@@ -59,25 +57,79 @@ body {
         white-space: nowrap;
         overflow: hidden;
     }
+
+    #content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3px 50px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        list-style: none;
+        gap: 30px;
+        white-space: nowrap;
+        font-size: 18px;
+    }
+
+    a {
+        color: $text-color;
+        text-decoration: none;
+    }
 }
 
-// %page {
-//     display: flex;
-//     flex-wrap: wrap;
-//     flex-direction: row;
-//     align-items: center;
-//     height: 100vh;
-//     box-sizing: border-box;
-// }
+#header-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 150px;
+    background-color: $secondary;
+    border-radius: 100px;
+    position: fixed;
+    right: 50%;
+    font-size: 18px;
+    font-weight:bold;
+    color: $primary;
+    box-shadow: 0 0 5px rgb(26, 31, 38);
+}
 
 #page1 {
     @include page($primary);
     padding-top: 200px;
 }
 
-#page2, #page4 {
+#page2 {
     @include page($secondary);
+    flex-direction: column;
+    gap: 30px;
     padding-top: 100px;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+    
+    h2 {
+        color: $primary;
+    }
+    div {
+        @include flex(column, flex-start, flex-start);
+        div {
+            @include flex(row, flex-start, flex-start);
+            gap: 40px;
+            margin-top: 20px;
+
+        }
+
+        img {
+            max-width: 10%;
+            height: auto;
+        }
+    }
 }
 
 #page3 {
@@ -85,44 +137,22 @@ body {
     padding-top: 100px;
 }
 
-header-selector {
-    min-height: 100%;
-    width: 100px;
-    background-color: $secondary;
-    border-radius: 100px;
-    
+#page4 {
+    @include page($secondary);
+    padding-top: 100px;
 }
-
-// skills-row {
-
-// }
 
 .info {
     max-width: 400px;
 }
 
-a {
-    color: $text-color;
-    text-decoration: none;
-}
-
-.links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    list-style: none;
-    gap: 30px;
-    white-space: nowrap;
-    font-size: 18px;
-}
-
 h2 {
-    font-size: 26px;
+    font-size: 1.6em;
     color: $text-color;
 }
 
 p {
-    font-size: 16px;
+    font-size: 1em;
     color: $text-color;
 }
 
@@ -141,10 +171,13 @@ button {
     margin-top: 20px;
 }
 
-// #circle1 {
-//     background-color: $secondary;
-//     width: 550px;
-//     height: 550px;
-//     border-radius: 50%;
-//     float: right;
-// }
+
+@media screen and (max-width: 1000px) {
+
+    @mixin page ($pageColor) {
+        @include flex(row, flex-start, center);
+        height: fit-content;
+        box-sizing: border-box;
+        background-color: $pageColor;
+    }
+}
