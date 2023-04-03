@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   justify-content: center;
   margin: 0;
@@ -25,7 +29,7 @@ body > * {
   border-radius: 100px;
   max-height: 70px;
   margin-top: 20px;
-  box-shadow: 0 6px 20px rgb(26, 31, 38);
+  box-shadow: 0 6px 15px rgb(26, 31, 38);
   position: fixed;
   width: 100%;
   max-width: 90%;
@@ -53,9 +57,18 @@ body > * {
   white-space: nowrap;
   font-size: 18px;
 }
-.header a {
-  color: aliceblue;
+.header ul a {
+  color: rgb(224, 228, 237);
   text-decoration: none;
+  transition: color 0.2s ease-out 50ms, text-shadow 0.2s ease-out 50ms;
+}
+.header ul a:hover {
+  color: aliceblue;
+  text-shadow: 0 0 0.5em rgb(37, 43, 52);
+}
+.header ul a:active {
+  color: rgb(224, 228, 237);
+  text-shadow: none;
 }
 
 #header-selector {
@@ -83,8 +96,11 @@ body > * {
   box-sizing: border-box;
   background-color: rgb(37, 43, 52);
   padding-top: 200px;
+  scroll-behavior: smooth;
 }
-
+#page1 button {
+  margin-top: 20px;
+}
 #page2 {
   display: flex;
   flex-direction: row;
@@ -118,7 +134,7 @@ body > * {
   margin-top: 20px;
 }
 #page2 div img {
-  max-width: 10%;
+  max-width: 15vh;
   height: auto;
 }
 
@@ -131,6 +147,37 @@ body > * {
   box-sizing: border-box;
   background-color: rgb(37, 43, 52);
   padding-top: 100px;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 100px;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#page3 .card img {
+  width: 98%;
+  height: 97%;
+  border-radius: inherit;
+  transition: width 0.2s ease-out 50ms, height 0.2s ease-out 50ms;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(136, 150, 172);
+  width: 320px;
+  height: 200px;
+  border-radius: 25px;
+  transition: box-shadow 0.2s ease-out 50ms;
+}
+
+.card:hover {
+  box-shadow: 0 0 13px rgb(26, 31, 38);
+}
+.card:hover img {
+  width: 50px;
 }
 
 #page4 {
@@ -169,8 +216,32 @@ button {
   color: aliceblue;
 }
 
-.button1 {
-  margin-top: 20px;
+@media screen and (max-width: 900px) {
+  #main > div {
+    height: max-content;
+    min-height: 100vh;
+    padding: 100px 10vw;
+  }
+  #page2 > div > div {
+    flex-wrap: wrap;
+  }
+  #page2 > div > div img {
+    min-width: 10vw;
+  }
+}
+@media screen and (min-width: 1500px) {
+  #main > div {
+    padding: 100px 15%;
+  }
+  .header {
+    max-width: 1349px;
+  }
+  #page2 > div {
+    width: 1300px;
+  }
+  #page2 {
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=portfolio.css.map */

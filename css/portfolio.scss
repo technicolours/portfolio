@@ -1,6 +1,24 @@
 $text-color: aliceblue;
 $primary: rgba(37, 43, 52, 1);
 $secondary: rgb(136, 150, 172);
+//$secondary: rgba(217, 217, 217, 1);
+$hover: rgb(255, 255, 255);
+$dark-shadow: rgb(26, 31, 38);
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+@mixin list-page {
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 100px;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
 
 @mixin flex($direction, $justify, $align) {
     display: flex;
@@ -8,6 +26,7 @@ $secondary: rgb(136, 150, 172);
     align-items: $align;
     justify-content: $justify;
 }
+
 
 @mixin page ($pageColor) {
     @include flex(row, flex-start,  center);
@@ -45,7 +64,7 @@ body {
     border-radius: 100px;
     max-height: 70px;
     margin-top: 20px;
-    box-shadow: 0 6px 20px rgb(26, 31, 38);
+    box-shadow: 0 6px 15px rgb(26, 31, 38);
     position: fixed;
     width: 100%;
     max-width: 90%;
@@ -74,12 +93,24 @@ body {
         gap: 30px;
         white-space: nowrap;
         font-size: 18px;
+
+        a {
+            color: rgb(224, 228, 237);
+            text-decoration: none;
+            transition: color 0.2s ease-out 50ms, text-shadow 0.2s ease-out 50ms;
+        }
+
+        a:hover {
+            color: $text-color;
+            text-shadow: 0 0 0.5em $primary;
+        }
+
+        a:active {
+            color: rgb(224, 228, 237);
+            text-shadow: none;
+        }
     }
 
-    a {
-        color: $text-color;
-        text-decoration: none;
-    }
 }
 
 #header-selector {
@@ -101,17 +132,20 @@ body {
 #page1 {
     @include page($primary);
     padding-top: 200px;
+    scroll-behavior: smooth;
+
+    button {
+        margin-top: 20px;
+    }
+
+    button:hover {
+
+    }
 }
 
 #page2 {
     @include page($secondary);
-    flex-direction: column;
-    gap: 30px;
-    padding-top: 100px;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    justify-content: flex-start;
-    
+    @include list-page();
     
     h2 {
         color: $primary;
@@ -126,7 +160,7 @@ body {
         }
 
         img {
-            max-width: 10%;
+            max-width: 15vh;
             height: auto;
         }
     }
@@ -135,6 +169,32 @@ body {
 #page3 {
     @include page($primary);
     padding-top: 100px;
+    @include list-page();
+
+    .card {
+        img {
+            width: 98%;
+            height: 97%;
+            border-radius: inherit;
+            transition: width 0.2s ease-out 50ms, height 0.2s ease-out 50ms;
+        }
+    }
+}
+
+.card {
+    @include flex(row, center, center);
+    background-color: $secondary;
+    width: 320px;
+    height: 200px;
+    border-radius: 25px;
+    transition: box-shadow 0.2s ease-out 50ms;
+}
+
+.card:hover {
+    box-shadow: 0 0 13px $dark-shadow;
+    img {
+        width: 50px;
+    }
 }
 
 #page4 {
@@ -167,17 +227,43 @@ button {
     color: $text-color;
 }
 
-.button1 {
-    margin-top: 20px;
+
+
+
+@media screen and (max-width: 900px) {
+
+    #main > div {
+        height: max-content;
+        min-height: 100vh;
+        padding: 100px 10vw;
+    }
+
+    #page2 > div > div{
+        flex-wrap: wrap;
+
+        img {
+            min-width: 10vw;
+        }
+    }
+
 }
 
+@media screen and (min-width: 1500px) {
 
-@media screen and (max-width: 1000px) {
-
-    @mixin page ($pageColor) {
-        @include flex(row, flex-start, center);
-        height: fit-content;
-        box-sizing: border-box;
-        background-color: $pageColor;
+    #main > div {
+        padding: 100px 15%;
     }
+
+    .header {
+        max-width: 1349px;
+    }
+
+    #page2 > div {
+        width: 1300px;
+    }
+
+    #page2 {
+        align-items: center;
+    }
+
 }
