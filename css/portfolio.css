@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  transition: 0;
 }
 
 body {
@@ -88,27 +89,24 @@ body > * {
 }
 
 #page1 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
   height: 100vh;
   box-sizing: border-box;
   background-color: rgb(37, 43, 52);
   padding-top: 200px;
   scroll-behavior: smooth;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 #page1 button {
   margin-top: 20px;
 }
 #page2 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
   height: 100vh;
   box-sizing: border-box;
   background-color: rgb(136, 150, 172);
+  display: flex;
   flex-direction: column;
   gap: 30px;
   padding-top: 100px;
@@ -139,52 +137,134 @@ body > * {
 }
 
 #page3 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
   height: 100vh;
   box-sizing: border-box;
   background-color: rgb(37, 43, 52);
-  padding-top: 100px;
+  height: fit-content;
+  display: flex;
   flex-direction: column;
   gap: 30px;
   padding-top: 100px;
   flex-wrap: nowrap;
   align-items: flex-start;
   justify-content: flex-start;
+  padding-top: 100px;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
-#page3 .card img {
-  width: 98%;
-  height: 97%;
-  border-radius: inherit;
-  transition: width 0.2s ease-out 50ms, height 0.2s ease-out 50ms;
+#page3 div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#page3 div .card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   background-color: rgb(136, 150, 172);
   width: 320px;
   height: 200px;
-  border-radius: 25px;
+  border-radius: 20px;
   transition: box-shadow 0.2s ease-out 50ms;
+  padding: 8px;
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+.card p {
+  height: 0;
+  margin-top: 3%;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.35s ease-out 25ms;
+}
+.card #text-container {
+  margin-top: 3%;
+  margin-bottom: -2%;
+  width: 100%;
+  height: min-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.card #text-container * {
+  margin: 0;
+}
+.card #text-container h3 {
+  color: rgb(37, 43, 52);
+}
+.card #text-container h4 {
+  color: rgb(214, 220, 230);
+  font-size: 14px;
+  font-weight: 100;
+}
+.card #img-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 13px;
+  transition: height 0.4s ease-out 10ms;
+  overflow: hidden;
+  flex-grow: 0;
+}
+.card #img-container img {
+  width: 100%;
+  height: auto;
+}
+.card #img-container div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: 0.2s ease-out 50ms;
+}
+.card #img-container div h3 {
+  color: aliceblue;
+  text-shadow: 0 0 10px black;
+  font-weight: 200;
+  opacity: 0;
+  transition: 0.2s ease-out 50ms;
+  font-size: 16px;
+}
+.card #img-container div:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.card #img-container div:hover h3 {
+  opacity: 1;
 }
 
 .card:hover {
   box-shadow: 0 0 13px rgb(26, 31, 38);
 }
-.card:hover img {
-  width: 50px;
+.card:hover #img-container {
+  height: 50%;
+}
+.card:hover p {
+  opacity: 1;
 }
 
 #page4 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
   height: 100vh;
   box-sizing: border-box;
   background-color: rgb(136, 150, 172);

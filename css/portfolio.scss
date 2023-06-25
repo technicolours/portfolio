@@ -5,13 +5,17 @@ $secondary: rgb(136, 150, 172);
 $hover: rgb(255, 255, 255);
 $dark-shadow: rgb(26, 31, 38);
 
+$card-transition: 0.35s ease-out 25ms;
+$overlay-transition: 0.2s ease-out 50ms;
 
 
 html {
     scroll-behavior: smooth;
+    transition: 0;
 }
 
 @mixin list-page {
+    display: flex;
     flex-direction: column;
     gap: 30px;
     padding-top: 100px;
@@ -29,7 +33,7 @@ html {
 
 
 @mixin page ($pageColor) {
-    @include flex(row, flex-start,  center);
+
     height: 100vh;
     box-sizing: border-box;
     background-color: $pageColor;
@@ -133,7 +137,7 @@ body {
     @include page($primary);
     padding-top: 200px;
     scroll-behavior: smooth;
-
+    @include flex(row, flex-start,  center);
     button {
         margin-top: 20px;
     }
@@ -146,7 +150,6 @@ body {
 #page2 {
     @include page($secondary);
     @include list-page();
-    
     h2 {
         color: $primary;
     }
@@ -168,33 +171,129 @@ body {
 
 #page3 {
     @include page($primary);
-    padding-top: 100px;
+    height: fit-content;
     @include list-page();
+    padding-top: 100px;
+    flex-wrap: wrap;
+    flex-direction: column;
 
-    .card {
-        img {
-            width: 98%;
-            height: 97%;
-            border-radius: inherit;
-            transition: width 0.2s ease-out 50ms, height 0.2s ease-out 50ms;
-        }
+    div {
+       @include flex(column, flex-start, flex-start);
+       .card-container {
+        @include flex(row, flex-start, flex-start);
+        gap: 30px;
+        flex-wrap: wrap;
+       }
     }
 }
 
 .card {
-    @include flex(row, center, center);
+    @include flex(column, right, center);
     background-color: $secondary;
     width: 320px;
     height: 200px;
-    border-radius: 25px;
+    border-radius: 20px;
     transition: box-shadow 0.2s ease-out 50ms;
+    padding: 8px;
+    overflow: hidden;
+    flex-wrap: nowrap;
+
+    p {
+        height: 0;
+        margin-top: 3%;
+        font-size: 12px;
+        opacity: 0;
+        transition: opacity $card-transition;
+    }    
+
+    #text-container {
+        margin-top: 3%;
+        margin-bottom: -2%;
+        width: 100%;
+        height: min-content;
+        @include flex(row, space-between, center);
+
+        //flex-grow: 1;
+
+        * {
+            margin: 0;
+        }
+
+        h3 {
+            color: $primary;
+        }
+
+        h4 {
+            color: rgb(214, 220, 230);
+            font-size: 14px;
+            font-weight: 100;
+        }
+        
+    }
+
+    #img-container {
+        position: relative;
+        @include flex(row, center, center);
+        width: 100%;
+        height: 100%;
+        border-radius: 13px;
+        transition: height 0.4s ease-out 10ms;
+        overflow: hidden;
+        flex-grow: 0;
+
+        img {
+            width: 100%;
+            height: auto;
+            //transition: width $card-transition, height $card-transition;
+            //filter: brightness(0.2);
+        }
+
+        div {
+            @include flex(row, center, center);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.0);
+        
+            h3 {
+                color: aliceblue;
+                text-shadow: 0 0 10px black;
+                font-weight: 200;
+                opacity: 0;
+                transition: $overlay-transition;
+                font-size: 16px;
+            }  
+            transition: $overlay-transition;
+        }
+
+        div:hover {
+            background: rgba(0, 0, 0, 0.2);
+
+            h3 {
+                opacity: 1;
+            }
+        }
+    }
 }
 
 .card:hover {
     box-shadow: 0 0 13px $dark-shadow;
-    img {
-        width: 50px;
+    #img-container {
+        height: 50%;
+       // transition: height 0.5s ease-out 0ms;
+        // img { 
+        //     width: 105%;
+        //     height: auto;
+        // }
     }
+
+    p {
+        opacity: 1;
+    }
+
+
 }
 
 #page4 {
