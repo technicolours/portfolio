@@ -54,7 +54,7 @@ body > * {
   flex-direction: row;
   justify-content: space-evenly;
   list-style: none;
-  gap: 30px;
+  gap: 70px;
   white-space: nowrap;
   font-size: 18px;
 }
@@ -80,8 +80,8 @@ body > * {
   width: 150px;
   background-color: rgb(136, 150, 172);
   border-radius: 100px;
-  position: fixed;
-  right: 50%;
+  position: relative;
+  right: 80%;
   font-size: 18px;
   font-weight: bold;
   color: rgb(37, 43, 52);
@@ -97,7 +97,7 @@ body > * {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 #page1 button {
   margin-top: 20px;
@@ -140,6 +140,7 @@ body > * {
   height: 100vh;
   box-sizing: border-box;
   background-color: rgb(37, 43, 52);
+  height: -moz-fit-content;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -183,15 +184,16 @@ body > * {
 }
 .card p {
   height: 0;
-  margin-top: 3%;
+  margin: 0px;
   font-size: 12px;
   opacity: 0;
   transition: opacity 0.35s ease-out 25ms;
 }
 .card #text-container {
   margin-top: 3%;
-  margin-bottom: -2%;
+  margin-bottom: 2%;
   width: 100%;
+  height: -moz-min-content;
   height: min-content;
   display: flex;
   flex-direction: row;
@@ -298,6 +300,7 @@ button {
 
 @media screen and (max-width: 900px) {
   #main > div {
+    height: -moz-max-content;
     height: max-content;
     min-height: 100vh;
     padding: 100px 10vw;
@@ -322,6 +325,4 @@ button {
   #page2 {
     align-items: center;
   }
-}
-
-/*# sourceMappingURL=portfolio.css.map */
+}/*# sourceMappingURL=portfolio.css.map */
