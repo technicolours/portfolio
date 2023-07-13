@@ -49,7 +49,7 @@ body {
 
 #main {
     > * {
-        padding: 100px 130px;
+        padding: 100px 180px;
         min-height: 350px;
     }
 }
@@ -70,10 +70,12 @@ body {
     margin-top: 20px;
     box-shadow: 0 6px 15px rgb(26, 31, 38);
     position: fixed;
-    width: 100%;
-    max-width: 90%;
+    width: 90%;
+    max-width: 1800px;
     box-sizing: border-box;
     z-index: 2;
+    //max-width: 1700px;
+
 
     h2 {
         display: flex;
@@ -125,8 +127,9 @@ body {
     width: 150px;
     background-color: $secondary;
     border-radius: 100px;
-    position: relative;
-    right: 50%;
+    position: absolute;
+    //right: 50%;
+    transform: translateX(42%);
     font-size: 18px;
     font-weight:bold;
     color: $primary;
@@ -138,8 +141,18 @@ body {
     @include page($primary);
     padding-top: 200px;
     scroll-behavior: smooth;
-    @include flex(row, space-between,  center);
+    @include flex(row, center,  center);
     
+    > div {
+        @include flex(row, space-between,  center);
+        width: 100%;
+        //flex-wrap: wrap;
+        .info {
+            max-width: 400px;
+            @include flex(column, center,  flex-start);
+        }
+    }
+
     button {
         margin-top: 20px;
     }
@@ -147,28 +160,41 @@ body {
     button:hover {
 
     }
+
+    
+    
 }
+
+
 
 #page2 {
     @include page($secondary);
     @include list-page();
+    @include flex(column, center, center);
     h2 {
         color: $primary;
     }
+
     div {
-        @include flex(column, flex-start, flex-start);
+        @include flex(column, center, flex-start);
+        width: 100%;
         div {
-            @include flex(row, flex-start, flex-start);
-            gap: 40px;
-            margin-top: 20px;
-
-        }
-
-        img {
-            max-width: 15vh;
-            height: auto;
+            @include flex(column, flex-start, flex-start);
+            div {
+                @include flex(row, flex-start, flex-start);
+                gap: 40px;
+                margin-top: 20px;
+                flex-wrap: wrap;
+            }
+    
+            img {
+                max-width: 150px;
+                height: auto;
+            }
         }
     }
+
+
 }
 
 #page3 {
@@ -192,7 +218,7 @@ body {
 .card {
     @include flex(column, right, center);
     background-color: $secondary;
-    width: 320px;
+    width: 300px;
     height: 200px;
     border-radius: 20px;
     transition: box-shadow 0.2s ease-out 50ms;
@@ -303,9 +329,7 @@ body {
     padding-top: 100px;
 }
 
-.info {
-    max-width: 400px;
-}
+
 
 h2 {
     font-size: 1.6em;
@@ -318,7 +342,7 @@ p {
 }
 
 button {
-    border-radius: 8px;
+    border-radius: 50px;
     font-size: 18px;
     background-color: rgba(66, 73, 82, 1);
     width: 100px;
@@ -328,42 +352,30 @@ button {
     color: $text-color;
 }
 
+@media screen and (min-width: 1500px) {
 
-
-
-@media screen and (max-width: 900px) {
-
-    #main > div {
-        height: max-content;
-        min-height: 100vh;
-        padding: 100px 10vw;
-    }
-
-    #page2 > div > div{
-        flex-wrap: wrap;
-
-        img {
-            min-width: 10vw;
-        }
+    #page2 {
+        align-items: center;
     }
 
 }
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 2061px) {
 
-    #main > div {
-        padding: 100px 15%;
-    }
 
-    .header {
-        max-width: 1349px;
-    }
+    // .header {
+    //     max-width: 1700px;
+    // }
 
-    #page2 > div {
-        width: 1300px;
+    #page2 > div, #page3 > div, #page1 > div,{
+        width: 1700px;
     }
 
     #page2 {
+        justify-content: center;
+    }
+
+    #page3 {
         align-items: center;
     }
 

@@ -12,7 +12,7 @@ body > * {
 }
 
 #main > * {
-  padding: 100px 130px;
+  padding: 100px 180px;
   min-height: 350px;
 }
 
@@ -32,10 +32,10 @@ body > * {
   margin-top: 20px;
   box-shadow: 0 6px 15px rgb(26, 31, 38);
   position: fixed;
-  width: 100%;
-  max-width: 90%;
+  width: 90%;
+  max-width: 1800px;
   box-sizing: border-box;
-  z-index: 5;
+  z-index: 2;
 }
 .header h2 {
   display: flex;
@@ -80,12 +80,13 @@ body > * {
   width: 150px;
   background-color: rgb(136, 150, 172);
   border-radius: 100px;
-  position: relative;
-  right: 80%;
+  position: absolute;
+  transform: translateX(42%);
   font-size: 18px;
   font-weight: bold;
   color: rgb(37, 43, 52);
   box-shadow: 0 0 5px rgb(26, 31, 38);
+  z-index: 3;
 }
 
 #page1 {
@@ -97,7 +98,21 @@ body > * {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+}
+#page1 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  width: 100%;
+}
+#page1 > div .info {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 #page1 button {
   margin-top: 20px;
@@ -113,6 +128,10 @@ body > * {
   flex-wrap: nowrap;
   align-items: flex-start;
   justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 #page2 h2 {
   color: rgb(37, 43, 52);
@@ -121,18 +140,26 @@ body > * {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
+  width: 100%;
 }
 #page2 div div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#page2 div div div {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 40px;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
-#page2 div img {
-  max-width: 15vh;
+#page2 div div img {
+  max-width: 150px;
   height: auto;
 }
 
@@ -174,7 +201,7 @@ body > * {
   align-items: center;
   justify-content: right;
   background-color: rgb(136, 150, 172);
-  width: 320px;
+  width: 300px;
   height: 200px;
   border-radius: 20px;
   transition: box-shadow 0.2s ease-out 50ms;
@@ -273,10 +300,6 @@ body > * {
   padding-top: 100px;
 }
 
-.info {
-  max-width: 400px;
-}
-
 h2 {
   font-size: 1.6em;
   color: aliceblue;
@@ -288,7 +311,7 @@ p {
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 50px;
   font-size: 18px;
   background-color: rgb(66, 73, 82);
   width: 100px;
@@ -298,31 +321,19 @@ button {
   color: aliceblue;
 }
 
-@media screen and (max-width: 900px) {
-  #main > div {
-    height: -moz-max-content;
-    height: max-content;
-    min-height: 100vh;
-    padding: 100px 10vw;
-  }
-  #page2 > div > div {
-    flex-wrap: wrap;
-  }
-  #page2 > div > div img {
-    min-width: 10vw;
+@media screen and (min-width: 1500px) {
+  #page2 {
+    align-items: center;
   }
 }
-@media screen and (min-width: 1500px) {
-  #main > div {
-    padding: 100px 15%;
-  }
-  .header {
-    max-width: 1349px;
-  }
-  #page2 > div {
-    width: 1300px;
+@media screen and (min-width: 2061px) {
+  #page2 > div, #page3 > div, #page1 > div {
+    width: 1700px;
   }
   #page2 {
+    justify-content: center;
+  }
+  #page3 {
     align-items: center;
   }
 }/*# sourceMappingURL=portfolio.css.map */
