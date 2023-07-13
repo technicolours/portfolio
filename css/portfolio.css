@@ -13,7 +13,6 @@ body > * {
 
 #main > * {
   padding: 100px 180px;
-  min-height: 350px;
 }
 
 #hcontainer {
@@ -89,8 +88,18 @@ body > * {
   z-index: 3;
 }
 
+.info {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 #page1 {
-  height: 100vh;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 100vh;
   box-sizing: border-box;
   background-color: rgb(37, 43, 52);
   padding-top: 200px;
@@ -107,18 +116,16 @@ body > * {
   justify-content: space-between;
   width: 100%;
 }
-#page1 > div .info {
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+#page1 > div img {
+  max-width: 100%;
 }
 #page1 button {
   margin-top: 20px;
 }
 #page2 {
-  height: 100vh;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 100vh;
   box-sizing: border-box;
   background-color: rgb(136, 150, 172);
   display: flex;
@@ -136,6 +143,32 @@ body > * {
 #page2 h2 {
   color: rgb(37, 43, 52);
 }
+#page2 ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 30px;
+  font-size: 18px;
+  padding: 0px;
+  margin: 0px;
+}
+#page2 ul p {
+  margin: 0px;
+  color: rgb(37, 43, 52);
+}
+#page2 ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+#page2 ul img {
+  max-height: 1em;
+}
 #page2 div {
   display: flex;
   flex-direction: column;
@@ -148,6 +181,7 @@ body > * {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  margin-bottom: 15px;
 }
 #page2 div div div {
   display: flex;
@@ -155,20 +189,21 @@ body > * {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 40px;
-  margin-top: 20px;
   flex-wrap: wrap;
 }
 #page2 div div img {
-  max-width: 150px;
+  max-width: 90px;
   height: auto;
 }
 
 #page3 {
-  height: 100vh;
-  box-sizing: border-box;
-  background-color: rgb(37, 43, 52);
   height: -moz-fit-content;
   height: fit-content;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: rgb(37, 43, 52);
+  min-height: -moz-fit-content;
+  min-height: fit-content;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -193,6 +228,67 @@ body > * {
   justify-content: flex-start;
   gap: 30px;
   flex-wrap: wrap;
+}
+
+#page4 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 70vh;
+  box-sizing: border-box;
+  background-color: rgb(136, 150, 172);
+  flex-wrap: wrap;
+}
+#page4 h2 {
+  color: rgb(37, 43, 52);
+}
+#page4 p {
+  color: rgb(37, 43, 52);
+}
+#page4 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+#page4 img {
+  width: auto;
+  height: 70%;
+}
+#page4 button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0px 0px 8px rgb(58, 65, 75);
+}
+#page4 .info p {
+  margin: 0px;
+}
+#page4 #buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+#page4 #github {
+  background-color: rgb(37, 43, 52);
+  width: 110px;
+}
+
+#footer {
+  height: -moz-fit-content;
+  height: fit-content;
+  height: 30vh;
+  box-sizing: border-box;
+  background-color: rgb(37, 43, 52);
 }
 
 .card {
@@ -293,13 +389,6 @@ body > * {
   opacity: 1;
 }
 
-#page4 {
-  height: 100vh;
-  box-sizing: border-box;
-  background-color: rgb(136, 150, 172);
-  padding-top: 100px;
-}
-
 h2 {
   font-size: 1.6em;
   color: aliceblue;
@@ -321,11 +410,6 @@ button {
   color: aliceblue;
 }
 
-@media screen and (min-width: 1500px) {
-  #page2 {
-    align-items: center;
-  }
-}
 @media screen and (min-width: 2061px) {
   #page2 > div, #page3 > div, #page1 > div {
     width: 1700px;
@@ -335,5 +419,32 @@ button {
   }
   #page3 {
     align-items: center;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #page1 > div, #page4 > div {
+    flex-direction: column;
+  }
+  #page4 > div {
+    gap: 100px;
+  }
+}
+@media screen and (max-width: 850px) {
+  #main > * {
+    padding: 100px 20px;
+    min-height: 350px;
+    justify-content: center;
+  }
+  #main > * > div {
+    max-width: 490.4px;
+  }
+  #main #page3 {
+    align-items: center;
+  }
+  #main #page3 > div {
+    max-width: 316px;
+  }
+  #main #page3 > div > div {
+    justify-content: center;
   }
 }/*# sourceMappingURL=portfolio.css.map */
