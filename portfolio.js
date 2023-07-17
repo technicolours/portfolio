@@ -47,6 +47,10 @@ window.addEventListener("resize", windowResize);
 
 document.addEventListener("scroll", () => isInViewport(page, height));
 
+const headerButtons = [l0, l1, l2, l3];
+
+
+
 /*
 
 
