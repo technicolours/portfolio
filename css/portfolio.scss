@@ -86,7 +86,7 @@ body {
         overflow: hidden;
     }
 
-    #content {
+    #header-content {
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -102,6 +102,7 @@ body {
         gap: 70px;
         white-space: nowrap;
         font-size: 18px;
+        padding: 0;
 
         a {
             color: rgb(224, 228, 237);
@@ -132,7 +133,7 @@ body {
     border-radius: 100px;
     position: absolute;
     //right: 50%;
-    transform: translateX(42%);
+    transform: translateX(500px);
     font-size: 18px;
     font-weight:bold;
     color: $primary;

@@ -41,7 +41,7 @@ body > * {
   white-space: nowrap;
   overflow: hidden;
 }
-.header #content {
+.header #header-content {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -56,6 +56,7 @@ body > * {
   gap: 70px;
   white-space: nowrap;
   font-size: 18px;
+  padding: 0;
 }
 .header ul a {
   color: rgb(224, 228, 237);
@@ -80,7 +81,7 @@ body > * {
   background-color: rgb(136, 150, 172);
   border-radius: 100px;
   position: absolute;
-  transform: translateX(42%);
+  transform: translateX(500px);
   font-size: 18px;
   font-weight: bold;
   color: rgb(37, 43, 52);
