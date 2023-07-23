@@ -77,16 +77,19 @@ body > * {
   justify-content: center;
   align-items: center;
   height: 70px;
-  width: 150px;
   background-color: rgb(136, 150, 172);
   border-radius: 100px;
   position: absolute;
-  transform: translateX(500px);
+  transform: translateX(918px);
   font-size: 18px;
   font-weight: bold;
   color: rgb(37, 43, 52);
   box-shadow: 0 0 5px rgb(26, 31, 38);
   z-index: 3;
+  padding: 0px 50px;
+  width: auto;
+  max-width: 300px;
+  transition: transform 0.3s ease-in-out, max-width 1s ease-in-out;
 }
 
 .info {
@@ -97,7 +100,7 @@ body > * {
   justify-content: center;
 }
 
-#page1 {
+#page0 {
   height: -moz-fit-content;
   height: fit-content;
   min-height: 100vh;
@@ -110,20 +113,20 @@ body > * {
   align-items: center;
   justify-content: center;
 }
-#page1 > div {
+#page0 > div {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
-#page1 > div img {
+#page0 > div img {
   max-width: 100%;
 }
-#page1 button {
+#page0 button {
   margin-top: 20px;
 }
-#page2 {
+#page1 {
   height: -moz-fit-content;
   height: fit-content;
   min-height: 100vh;
@@ -141,10 +144,10 @@ body > * {
   align-items: center;
   justify-content: center;
 }
-#page2 h2 {
+#page1 h2 {
   color: rgb(37, 43, 52);
 }
-#page2 ul {
+#page1 ul {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -156,35 +159,35 @@ body > * {
   padding: 0px;
   margin: 0px;
 }
-#page2 ul p {
+#page1 ul p {
   margin: 0px;
   color: rgb(37, 43, 52);
 }
-#page2 ul li {
+#page1 ul li {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
 }
-#page2 ul img {
+#page1 ul img {
   max-height: 1em;
 }
-#page2 div {
+#page1 div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
 }
-#page2 div div {
+#page1 div div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   margin-bottom: 15px;
 }
-#page2 div div div {
+#page1 div div div {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -192,12 +195,12 @@ body > * {
   gap: 40px;
   flex-wrap: wrap;
 }
-#page2 div div img {
+#page1 div div img {
   max-width: 90px;
   height: auto;
 }
 
-#page3 {
+#page2 {
   height: -moz-fit-content;
   height: fit-content;
   min-height: 100vh;
@@ -216,13 +219,13 @@ body > * {
   flex-wrap: wrap;
   flex-direction: column;
 }
-#page3 div {
+#page2 div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-#page3 div .card-container {
+#page2 div .card-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -231,7 +234,7 @@ body > * {
   flex-wrap: wrap;
 }
 
-#page4 {
+#page3 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -243,24 +246,24 @@ body > * {
   background-color: rgb(136, 150, 172);
   flex-wrap: wrap;
 }
-#page4 h2 {
+#page3 h2 {
   color: rgb(37, 43, 52);
 }
-#page4 p {
+#page3 p {
   color: rgb(37, 43, 52);
 }
-#page4 > div {
+#page3 > div {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
-#page4 img {
+#page3 img {
   width: auto;
   height: 70%;
 }
-#page4 button {
+#page3 button {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -269,17 +272,17 @@ body > * {
   height: 60px;
   box-shadow: 0px 0px 8px rgb(58, 65, 75);
 }
-#page4 .info p {
+#page3 .info p {
   margin: 0px;
 }
-#page4 #buttons {
+#page3 #buttons {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
 }
-#page4 #github {
+#page3 #github {
   background-color: rgb(37, 43, 52);
   width: 110px;
 }

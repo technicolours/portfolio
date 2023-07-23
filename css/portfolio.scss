@@ -128,17 +128,23 @@ body {
     justify-content: center;
     align-items: center;
     height: 70px;
-    width: 150px;
+    //width: 150px;
     background-color: $secondary;
     border-radius: 100px;
     position: absolute;
     //right: 50%;
-    transform: translateX(500px);
+    transform: translateX(918px);
     font-size: 18px;
     font-weight:bold;
     color: $primary;
     box-shadow: 0 0 5px rgb(26, 31, 38);
     z-index: 3;
+    padding: 0px 50px;
+    width:auto;
+    max-width: 300px;
+   // opacity: 0.5;
+   transition: transform 0.3s ease-in-out, max-width 1s ease-in-out;
+   //transition-property: translate, width;
 }
 
 .info {
@@ -146,7 +152,7 @@ body {
     @include flex(column, center,  flex-start);
 }
 
-#page1 {
+#page0 {
     @include page($primary);
     padding-top: 200px;
     scroll-behavior: smooth;
@@ -176,7 +182,7 @@ body {
 
 
 
-#page2 {
+#page1 {
     @include page($secondary);
     @include list-page();
     @include flex(column, center, center);
@@ -232,7 +238,7 @@ body {
 
 }
 
-#page3 {
+#page2 {
     @include page($primary);
     min-height: fit-content;
     @include list-page();
@@ -250,7 +256,7 @@ body {
     }
 }
 
-#page4 {
+#page3 {
 
     h2 {
         color: $dark-text;
