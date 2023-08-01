@@ -41,6 +41,14 @@ body > * {
   white-space: nowrap;
   overflow: hidden;
 }
+.header h2 a {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  color: aliceblue;
+  -webkit-text-decoration: 0;
+          text-decoration: 0;
+}
 .header #header-content {
   width: 100%;
   display: flex;
@@ -53,7 +61,7 @@ body > * {
   flex-direction: row;
   justify-content: space-evenly;
   list-style: none;
-  gap: 70px;
+  gap: 100px;
   white-space: nowrap;
   font-size: 18px;
   padding: 0;
@@ -61,14 +69,14 @@ body > * {
 .header ul a {
   color: rgb(224, 228, 237);
   text-decoration: none;
-  transition: color 0.2s ease-out 50ms, text-shadow 0.2s ease-out 50ms;
+  transition: color 0.2s ease-out 20ms, text-shadow 0.2s ease-out 20ms;
 }
 .header ul a:hover {
   color: aliceblue;
   text-shadow: 0 0 0.5em rgb(37, 43, 52);
 }
 .header ul a:active {
-  color: rgb(224, 228, 237);
+  color: rgb(255, 255, 255);
   text-shadow: none;
 }
 
@@ -89,7 +97,7 @@ body > * {
   padding: 0px 50px;
   width: auto;
   max-width: 300px;
-  transition: transform 0.3s ease-in-out, max-width 1s ease-in-out;
+  transition: transform 0.2s ease-in-out, max-width 0s ease-in-out;
 }
 
 .info {
@@ -415,21 +423,21 @@ button {
 }
 
 @media screen and (min-width: 2061px) {
-  #page2 > div, #page3 > div, #page1 > div {
+  #page1 > div, #page2 > div, #page0 > div, #page3 > div {
     width: 1700px;
   }
-  #page2 {
+  #page1 {
     justify-content: center;
   }
-  #page3 {
+  #page2 {
     align-items: center;
   }
 }
 @media screen and (max-width: 1200px) {
-  #page1 > div, #page4 > div {
+  #page0 > div, #page3 > div {
     flex-direction: column;
   }
-  #page4 > div {
+  #page3 > div {
     gap: 100px;
   }
 }
@@ -442,13 +450,13 @@ button {
   #main > * > div {
     max-width: 490.4px;
   }
-  #main #page3 {
+  #main #page2 {
     align-items: center;
   }
-  #main #page3 > div {
+  #main #page2 > div {
     max-width: 316px;
   }
-  #main #page3 > div > div {
+  #main #page2 > div > div {
     justify-content: center;
   }
 }/*# sourceMappingURL=portfolio.css.map */

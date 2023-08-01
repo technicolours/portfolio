@@ -84,6 +84,14 @@ body {
         display: flex;
         white-space: nowrap;
         overflow: hidden;
+        a {
+            display: flex;
+            white-space: nowrap;
+            overflow: hidden;
+           // font-size: 1.6em;
+            color: $light-text;
+text-decoration:0;
+        }
     }
 
     #header-content {
@@ -99,7 +107,7 @@ body {
         flex-direction: row;
         justify-content: space-evenly;
         list-style: none;
-        gap: 70px;
+        gap: 100px;
         white-space: nowrap;
         font-size: 18px;
         padding: 0;
@@ -107,7 +115,7 @@ body {
         a {
             color: rgb(224, 228, 237);
             text-decoration: none;
-            transition: color 0.2s ease-out 50ms, text-shadow 0.2s ease-out 50ms;
+            transition: color 0.2s ease-out 20ms, text-shadow 0.2s ease-out 20ms;
         }
 
         a:hover {
@@ -116,7 +124,7 @@ body {
         }
 
         a:active {
-            color: rgb(224, 228, 237);
+            color: rgb(255, 255, 255);
             text-shadow: none;
         }
     }
@@ -142,8 +150,8 @@ body {
     padding: 0px 50px;
     width:auto;
     max-width: 300px;
-   // opacity: 0.5;
-   transition: transform 0.3s ease-in-out, max-width 1s ease-in-out;
+    //opacity: 0.5;
+    transition: transform 0.2s ease-in-out, max-width 0s ease-in-out;
    //transition-property: translate, width;
 }
 
@@ -461,27 +469,27 @@ button {
     //     max-width: 1700px;
     // }
 
-    #page2 > div, #page3 > div, #page1 > div{
+    #page1 > div, #page2 > div, #page0 > div, #page3 > div{
         width: 1700px;
     }
 
-    #page2 {
+    #page1 {
         justify-content: center;
     }
 
-    #page3 {
+    #page2 {
         align-items: center;
     }
 
 }
 
 @media screen and (max-width: 1200px) {
-    #page1 > div, #page4 > div {
+    #page0 > div, #page3 > div {
         flex-direction: column;
         
     }
 
-    #page4 > div {
+    #page3 > div {
         gap: 100px;
     }
 }
@@ -500,14 +508,14 @@ button {
             
         }
 
-        #page3 {
+        #page2 {
             align-items: center;
             > div {
                 max-width: 316px;
             }
         }
 
-        #page3 > div > div {
+        #page2 > div > div {
                 justify-content: center;
         }
     } 
